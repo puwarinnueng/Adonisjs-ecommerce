@@ -1,0 +1,34 @@
+<div class="cmn-container">
+    <h3 class="cmn-typo-h3 header">ข้อมูลรถ</h3>
+    <div class="cmn-car-details-contents-container">
+       <div class="cmn-car-details-row">
+          <div class="cmn-typo-subheader section">รุ่นย่อย</div>
+          <div class="cmn-typo-subheader content">{{alldata.submodel.attributes.text}}</div>
+       </div>
+       <div class="cmn-car-details-row">
+          <div class="cmn-typo-subheader section">รายละเอียดรถ</div>
+          <div class="cmn-typo-subheader content"> {{alldata.relationships?.['redbook-info'].data.include.attributes.detail}}
+          </div>
+       </div>
+       <div class="cmn-car-details-row">
+          <div class="cmn-typo-subheader section">เครื่องยนต์</div>
+          <div class="cmn-typo-subheader content">  {{alldata.relationships?.['redbook-info'].data.include.attributes?.['engine-description']}} </div>
+       </div>
+       <div class="cmn-car-details-row">
+          <div class="cmn-typo-subheader section">ระบบเกียร์</div>
+          <div class="cmn-typo-subheader content"> {{alldata.relationships?.['redbook-info'].data.include.attributes?.['transmission-type']}}  </div>
+       </div>
+       <div class="cmn-car-details-row">
+          <div class="cmn-typo-subheader section">ขับเคลื่อน</div>
+          <div class="cmn-typo-subheader content"> {{alldata.relationships?.['redbook-info'].data.include.attributes?.['automobile-layout']}}  </div>
+       </div>
+       <div class="cmn-car-details-row">
+          <div class="cmn-typo-subheader section">ระบบเชื้อเพลิง</div>
+          <div class="cmn-typo-subheader content"> {{alldata.relationships?.['redbook-info'].data.include.attributes?.['fuel-type']}} </div>
+       </div>
+       <div class="cmn-car-details-row">
+          <div class="cmn-typo-subheader section">จังหวัด</div>
+          <div class="cmn-typo-subheader content">{{alldata.Province.attributes.text}}</div>
+       </div>
+    </div>
+ </div>

@@ -1,0 +1,73 @@
+<style>
+   .items {
+       width: 100%;
+       margin: 0px auto;
+       margin-left: 10%
+   }
+   
+   .slick-slide {
+       margin: 10px;  
+   }
+   
+   .slick-slide img {
+       width: 100%;
+       border: 0px solid #fff
+   }
+   
+   .slick-next::before, .slick-prev::before {
+     color: blue;
+   }
+</style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<div class="items">
+   @each(alldata2 in alldata2)
+   <div class="slick-initialized slick-slider SimilarCarsCarousel">
+       <div class="slick-list">
+           <div class="slick-track" style="opacity: 1; transform: translate3d(0px, 0px, 0px); width: 3000px;">
+               <div data-index="0" class="slick-slide slick-active" tabindex="-1" style="outline: none;">
+                   <div class="SimilarCarCard">
+                       <div class="SimilarCarCard__container">
+                           @each(photo in alldata2.photos) 
+                              @if(photo.include && photo.include.attributes['photo-type'] == 'front')
+                                 <a class="SimilarCarCard__blockImage" href="/car/{{alldata2.id}}" style="background-image: url(&quot;{{photo.include.attributes['medium-url']}}&quot;);"></a>
+                              @endif 
+                           @endeach
+                           <div class="SimilarCarCard__blockDescription">
+                               <a class="SimilarCarCard__blockDescription__link" href="/car/{{alldata2.id}}">
+                                   <span class="cmn-typo-caption CarCard__customCaption"> <div class="namerecom">{{alldata2.relationships['redbook-info'].data.include.attributes['year-group']}} | {{alldata2.attributes.name}}</div> </span>
+                                   <span class="cmn-typo-caption CarCard__customCaption"> <div class="namerecom">{{ (new Intl.NumberFormat().format(alldata2.attributes.mileage)) }} km</div> </span>
+                                   <span class="cmn-typo-caption CarCard__customCaption"> <div class="namerecom">฿{{ (new Intl.NumberFormat().format(alldata2.attributes.price)) }}</div></span>
+                               </a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   @endeach
+</div>
+
+
+
+
+ <script>
+   $(document).ready(function(){
+  
+  $('.items').slick({
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 4
+  });
+  });
+  </script>
+
+
+
+
+
+
+
+
+
+

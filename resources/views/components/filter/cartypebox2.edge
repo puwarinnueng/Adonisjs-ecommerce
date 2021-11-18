@@ -1,0 +1,17 @@
+<button  class="FilterCarListOption__buttonModel" onclick="filterByBrand({{res.id}})">{{res.attributes.key}}ทุกรุ่น</button> 
+<script>
+    const carBrandAndModel = '{{request.qs().carBrandAndModel || ''}}' 
+    function filterByBrand(brand){
+        let url = window.location.pathname + window.location.search
+
+        let colorss = carBrandAndModel ? carBrandAndModel?.split(',') : []
+        colorss.push(brand)
+        colorss.map(c => {
+            url = addQuery(url, 'carBrandAndModel[]', c, c )
+        })
+
+        url = addQuery(url, 'page', 1)
+        window.location = url
+        // window.location = `/cars?car_color=${color}`;     
+    }
+</script>

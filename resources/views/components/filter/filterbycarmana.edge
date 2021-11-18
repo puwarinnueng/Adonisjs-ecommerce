@@ -1,0 +1,36 @@
+{{--  กรองกล่องสุดท้าย  --}}
+<div class="FilterCarList__certifyCheckbox">
+    <div class="cmn-form-checkbox undefined">
+        <input id="undefined-certify" class="cmn-form-checkbox-input undefined" type="checkbox" onclick="task(event)"  {{request.qs().is_certified?.includes('true') ? 'checked': ''}}>
+        <label class="cmn-form-checkbox-label" for="undefined-certify">ผ่านการตรวจสอบจากคาร์มานา</label>
+    </div>
+ </div>
+ <div class="FilterCarList__certifyDetail">คาร์มานาได้ทำการตรวจสภาพรถคันนี้เรียบร้อยแล้ว
+    รถคันนี้มีสภาพดี
+ </div>
+
+
+
+ <div class="FilterCarList__grabCars"><a class="FilterCarList__carMatchingLink"
+    href=" {{ route('/carmana-sales-assisted-cars')}} ">เลือกเฉพาะรถที่ดูแลการขายโดย คาร์มานา</a></div>
+
+
+ <div class="FilterCarList__carMatching"><span>ใช้บริการ <a class="FilterCarList__carMatchingLink" href="https://carmana.com/car-matching">
+    คาร์มานาหารถให้
+    </a></span>
+ </div>
+
+
+ <script>
+function task(e){ 
+  if(e.target.checked)
+  {
+   //  console.log("do post request with 1 in parameter");
+    window.location = " {{  route('/cars')+'?is_certified='+true   }} "; 
+  }
+  else
+  {
+   //  console.log("do post request with 0 parameter");
+  }
+}
+ </script>

@@ -1,0 +1,95 @@
+<div class="cmn-container">
+   <h3 class="cmn-typo-h3 header">ข้อความจากผู้ขาย</h3>
+   <div class="cmn-car-msg-container">
+       <div class="cmn-car-msg-seller-container">
+           <div class="cmn-car-msg-seller-info">
+               <img class="cmn-img-seller" src="/images/icons/default-avatar.svg" alt="Seller" />
+               <h3 class="cmn-typo-h3 cmn-seller-name">{{alldata.relationships?.user.data.include.attributes?.['display-name']}}</h3>
+           </div>
+           {{--
+           <div class="cmn-verified-seller cmn-verified-seller">
+               <i class="cmn-verified-seller-logo"></i>
+               <span class="cmn-verified-seller-label">
+                   <div class="cmn-verified-seller-header">ผู้ขายผ่านการยืนยันตัวตน</div>
+                   <div class="cmn-verified-seller-description">คาร์มานาได้ทำการตรวจสอบผู้ขายแล้วว่าเป็นเจ้าของรถตัวจริง</div>
+               </span>
+           </div>
+           --}}
+       </div>
+       <div class="cmn-car-msg-desc-container">
+           <div class="cmn-story">
+               {{alldata.attributes.story}}
+           </div>
+
+           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="window.location = 'http://localhost:3002/login2/{{alldata.id}}'">
+            ติดต่อผู้ขาย
+           </button>
+        
+           {{--  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ติดต่อผู้ขาย</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+        
+                    <div class="modal-body">
+                        <h5>{{alldata.relationships?.user.data.include.attributes?.['display-name']}}</h5>
+                        <p><a href="#" class="tooltip-test" title="Tooltip">โทร</a>     <a href="#" class="tooltip-test" title="Tooltip">     </a>          </p>
+
+                        <hr />
+                        
+
+                        <div class="car-detail-service__wrapper">
+                            <div class="car-detail-service__title"><span>บริการอื่นๆของคาร์มานา</span></div>
+                            <div class="car-detail-service__underline"></div>
+                           
+                            <div class="service-item__wrapper" role="button" tabindex="0"  onclick="window.location='https://carmana.com/car-inspection'">
+                                <div class="service-item__content">
+                                    <div class="service-item__title"><span>บริการตรวจสภาพรถ</span></div>
+                                    <div class="service-item__subtitle"><span>ตรวจสภาพรถอย่างครอบคลุม 186 จุด</span></div>
+                                </div>
+                                <img class="service-item__next-button" src="/images/icons/arrow-right.svg" alt="" />
+                            </div>
+                           
+                            <div class="service-item__wrapper" role="button" tabindex="0"  onclick="window.location='https://carmana.com/financing-info'">
+                                <div class="service-item__content">
+                                    <div class="service-item__title"><span>จัดไฟแนนซ์</span></div>
+                                    <div class="service-item__subtitle"></div>
+                                </div>
+                                <img class="service-item__next-button" src="/images/icons/arrow-right.svg" alt="" />
+                            </div>
+                           
+                            <div class="service-item__wrapper" role="button" tabindex="0"  onclick="window.location='https://carmana.com/auto-insurance'">
+                                <div class="service-item__content">
+                                    <div class="service-item__title"><span>ประกันภัยรถยนต์</span></div>
+                                    <div class="service-item__subtitle"><span>ให้บริการโดย</span></div>
+                                </div>
+                                <img class="service-item__next-button" src="/images/icons/arrow-right.svg" alt="" />
+                            </div>
+                           
+                            <div class="service-item__wrapper" role="button" tabindex="0">
+                                <div class="service-item__content">
+                                    <div class="service-item__title"><span>บริการโอนกรรมสิทธิ์รถยนต์ จัดการเอกสารให้ฟรี</span></div>
+                                    <div class="service-item__subtitle"><span>เราจะช่วยคุณจัดการเรื่องเอกสารสำหรับการโอนกรรมสิทธิ์รถยนต์ด้วยการดำเนินการที่ปลอดภัย</span></div>
+                                </div>
+                            </div>
+                         
+                            <div class="car-detail-service__footer">
+                                <span class="car-detail-service__phone">
+                                    <span>ติดต่อคาร์มานา โทร <a class="seller-detail-link" href="tel:+66-2-026-3388">02-026-3388</a></span>
+                                </span>
+                            </div>
+                        </div>                      
+                       
+                    </div>
+                    
+                </div>
+            </div>
+        </div>  --}}
+          
+
+
+       </div>
+   </div>
+</div>

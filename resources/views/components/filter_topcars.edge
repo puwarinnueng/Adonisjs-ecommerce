@@ -1,0 +1,95 @@
+<div>
+    <button type="button" class="btn btn-link">
+        <u>
+            <a href="/cars"><h5>รถบ้านมือสอง</h5></a>                              
+        </u>                                                               
+    </button>
+    <h1 class="carmee">ซื้อขายรถบ้านมือสอง ตลาดรถมือสอง</h1>
+    <div class="carmee2">
+        <div class="FilterCarListOption__halfContainer2">                                    
+            <h2 class="sizefont1">หารถบ้าน ตามยี่ห้อ</h2>                                                              
+        </div>
+     
+        <div class="FilterCarListOption__halfContainer2">
+            <u>
+                <a class="carmee4" 
+                {{--  href="{{ route('/cars')+'?carBrandAndModel='+57 }}"  --}}
+                onclick="filterByBrand(57)"
+                >
+                <h3 class="sizefont2">Toyota</h3></a> 
+            </u>                                 
+        </div>
+        <div class="FilterCarListOption__halfContainer2">
+            <a><h5>|</h5></a>                              
+        </div>
+        <div class="FilterCarListOption__halfContainer2">
+            <u><a class="carmee4"
+                 {{--  href="{{ route('/cars')+'?carBrandAndModel='+18 }}"  --}}
+                onclick="filterByBrand(18)"
+                 > <h3 class="sizefont2">honda</h3></a></u>
+        </div>
+        <div class="FilterCarListOption__halfContainer2">
+            <a><h5>|</h5></a>                              
+        </div>
+        <div class="FilterCarListOption__halfContainer2">
+            <u><a class="carmee4" 
+                {{--  href="{{ route('/cars')+'?carBrandAndModel='+31 }}"  --}}
+                onclick="filterByBrand(31)"
+                > <h3 class="sizefont2">Mazda</h3></a></u>
+        </div>
+        <div class="FilterCarListOption__halfContainer2">
+            <a><h5>|</h5></a>                              
+        </div>
+        <div class="FilterCarListOption__halfContainer2">
+            <u><a class="carmee4" 
+                {{--  href="{{ route('/cars')+'?carBrandAndModel='+36 }}"  --}}
+                onclick="filterByBrand(36)"
+                > <h3 class="sizefont2">Mitsubishi</h3></a></u>
+        </div>
+        <div class="FilterCarListOption__halfContainer2">
+            <a><h5>|</h5></a>                              
+        </div>
+        <div class="FilterCarListOption__halfContainer2">
+            <u><a class="carmee4" 
+                {{--  href="{{ route('/cars')+'?carBrandAndModel='+39 }}"  --}}
+                onclick="filterByBrand(39)"
+                > <h3 class="sizefont2">Nissan</h3></a></u>
+        </div>
+        <div class="FilterCarListOption__halfContainer2">
+            <a><h5>|</h5></a>                              
+        </div>
+        <div class="FilterCarListOption__halfContainer2">
+            <u><a class="carmee4" 
+                {{--  href="{{ route('/cars')+'?carBrandAndModel='+33 }}"  --}}
+                onclick="filterByBrand(33)"
+                > <h3 class="sizefont2">Mercedes-Benz</h3></a></u>
+        </div>
+        <div class="FilterCarListOption__halfContainer2">
+            <a><h5>|</h5></a>                              
+        </div>
+        <div class="FilterCarListOption__halfContainer2">
+            <u><a class="carmee4" 
+                {{--  href="{{ route('/cars')+'?carBrandAndModel='+5 }}"  --}}
+                onclick="filterByBrand(5)"
+                ><h3 class="sizefont2">BMW</h3></a></u>
+        </div>
+    </div>
+</div>  
+
+<script>
+    const carBrandAndModel = '{{request.qs().carBrandAndModel || ''}}' 
+
+    function filterByBrand(color){
+        let url = window.location.pathname + window.location.search
+
+        let colors = carBrandAndModel ? carBrandAndModel?.split(',') : []
+        colors.push(color)
+        colors.map(c => {
+            url = addQuery(url, 'carBrandAndModel[]', c, c )
+        })
+
+        url = addQuery(url, 'page', 1)
+        window.location = url
+        // window.location = `/cars?car_color=${color}`;     
+    }
+</script>

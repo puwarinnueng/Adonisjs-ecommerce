@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+.container {
+  position: relative;
+}
+.mySlides {
+  display: none;
+}
+.cursor {
+  cursor: pointer;
+}
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  float: left;
+  width: 16.66%;
+}
+.demo {
+  /* opacity: 0.6; */
+  opacity: 1;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+<body>
+  <div class="cmn-car-cover">
+    <div class="car-carousel-cover">
+        <div class="carousel-root" tabindex="0">
+            <div class="carousel carousel-slider" style="width: 100%;">
+                <div class="slider-wrapper axis-horizontal">
+                    <div class="container">
+                        @each((photo , index) in alldata.photos)
+                        <div class="carcard1">
+                            <div class="mySlides">
+                                    <div>
+                                        <img src="{{photo.include.attributes?.['medium-url']}}" alt="" />
+                                        <div class="car-carousel-index">{{index+1}}</div>
+                                    </div>                                                          
+                            </div>
+                        </div>
+                        @endeach
+                      <button type="button" aria-label="previous slide / item" class="control-arrow control-prev" onclick="plusSlides(-1)"></button>
+                      <button type="button" aria-label="next slide / item" class="control-arrow control-next" onclick="plusSlides(1)"></button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel">
+                <div class="thumbs-wrapper axis-vertical">
+                    <button type="button" class="control-arrow control-prev control-disabled" aria-label="previous slide / item"></button>
+                    <ul class="thumbs animated" style="transform: translate3d(0px, 0px, 0px); transition-duration: 350ms;">
+                        <div class="row1">                 
+                            @include('components.car_detail.photos2')                          
+                        </div>
+                    </ul>
+                    <button type="button" class="control-arrow control-next control-disabled" aria-label="next slide / item"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  } 
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+  </script>
+</body>
+
+
+
+
+
+
+
+
+

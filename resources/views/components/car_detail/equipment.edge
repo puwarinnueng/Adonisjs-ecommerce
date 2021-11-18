@@ -1,0 +1,225 @@
+<div>
+    <div class="cmn-car-features-container">
+        <div class="cmn-container">
+            <h3 class="cmn-typo-h3 header">อุปกรณ์</h3>
+            <div class="cmn-car-features-contents-container">
+                
+                {{--  @each(carFeture in carFeture)
+                <div class="cmn-car-features-row {{ carFeture.id == '10'  && carFeture.attributes.text == 'USB' ? '' : 'not-included' }}">
+                         <i class="cmn-correct-icon"></i>
+                         <div class="cmn-typo-subheader content">USB</div>
+                </div>   
+                @endeach--}}
+      
+
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '10'  && carFeture.attributes.text == 'USB')
+                            <div class="cmn-car-features-row">
+                                <i class="cmn-correct-icon"></i>
+                                <div class="cmn-typo-subheader content">USB</div>
+                            </div>  
+                        @end
+                @endeach
+
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '4'  && carFeture.attributes.text == 'Sun Roof/Moon Roof')
+                            <div class="cmn-car-features-row">
+                              <i class="cmn-correct-icon"></i>
+                              <div class="cmn-typo-subheader content">ซันรูฟ/มูนรูฟ (Sun Roof/Moon Roof)</div>
+                            </div>
+                        @end
+                @endeach
+                             
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '3'  && carFeture.attributes.text == 'Airbag')
+                                <div class="cmn-car-features-row">
+                                    <i class="cmn-correct-icon"></i>
+                                    <div class="cmn-typo-subheader content">ถุงลมนิรภัย (ด้านข้าง, ด้านคนขับ, ผู้โดยสาร)</div>
+                                </div>
+                        @end
+                @endeach
+
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '1'  && carFeture.attributes.text == 'Bluetooth')                            
+                            <div class="cmn-car-features-row">
+                                <i class="cmn-correct-icon"></i>
+                                <div class="cmn-typo-subheader content">บลูทูธ (Bluetooth)</div>
+                            </div>
+                        @end
+                @endeach
+
+
+                {{--  <div class="cmn-car-features-row not-included">
+                    <i class="cmn-correct-icon"></i>
+                    <div class="cmn-typo-subheader content">พวงมาลัยมัลติฟังก์ชั่น</div>
+                </div>
+
+                <div class="cmn-car-features-row not-included">
+                    <i class="cmn-correct-icon"></i>
+                    <div class="cmn-typo-subheader content">ระบบกันสะเทือนรถ (Active Suspension)</div>
+                </div>
+
+                <div class="cmn-car-features-row not-included">
+                    <i class="cmn-correct-icon"></i>
+                    <div class="cmn-typo-subheader content">ระบบควบคุมการเปลี่ยนเกียร์ (Paddle Shift)</div>
+                </div>  --}}
+
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '9'  && carFeture.attributes.text == 'Cruise Control')                            
+                        <div class="cmn-car-features-row">
+                            <i class="cmn-correct-icon"></i>
+                            <div class="cmn-typo-subheader content">ระบบควบคุมความเร็วอัตโนมัติ (Cruise Control)</div>
+                        </div>
+                        @end
+                @endeach
+
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '5'  && carFeture.attributes.text == 'Parking Aid')                            
+                        <div class="cmn-car-features-row">
+                            <i class="cmn-correct-icon"></i>
+                            <div class="cmn-typo-subheader content">ระบบช่วยจอด</div>
+                        </div>
+                        @end
+                @endeach            
+
+                {{--  <div class="cmn-car-features-row not-included">
+                    <i class="cmn-correct-icon"></i>
+                    <div class="cmn-typo-subheader content">ระบบติดตั้งแก๊ส</div>
+                </div>  --}}
+
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '2'  && carFeture.attributes.text == 'GPS/Navigation')                            
+                        <div class="cmn-car-features-row">
+                            <i class="cmn-correct-icon"></i>
+                            <div class="cmn-typo-subheader content">ระบบติดตามรถ (GPS)</div>
+                        </div>
+                        @end
+                @endeach  
+
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '18'  && carFeture.attributes.text == 'Auto Climate Control')                            
+                        <div class="cmn-car-features-row">
+                            <i class="cmn-correct-icon"></i>
+                            <div class="cmn-typo-subheader content">ระบบปรับอากาศอัตโนมัติ (Auto Climate Control)</div>
+                        </div>
+                        @end
+                @endeach 
+              
+                {{--  <div class="cmn-car-features-row not-included">
+                    <i class="cmn-correct-icon"></i>
+                    <div class="cmn-typo-subheader content">ระบบปรับเบาะไฟฟ้า (Power Adjustable Seats)</div>
+                </div>  --}}
+
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '12'  && carFeture.attributes.text == 'Traction Control')                            
+                        <div class="cmn-car-features-row">
+                            <i class="cmn-correct-icon"></i>
+                            <div class="cmn-typo-subheader content">ระบบป้องกันล้อหมุนฟรี (Traction Control System)</div>
+                        </div>
+                        @end
+                @endeach 
+
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '11'  && carFeture.attributes.text == 'Anti-locking Brake System')                            
+                        <div class="cmn-car-features-row">
+                            <i class="cmn-correct-icon"></i>
+                            <div class="cmn-typo-subheader content">ระบบป้องกันเบรกล็อค (ABS)</div>
+                        </div>
+                        @end
+                @endeach  
+                
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '17'  && carFeture.attributes.text == 'Push Start/Stop')                            
+                        <div class="cmn-car-features-row">
+                            <i class="cmn-correct-icon"></i>
+                            <div class="cmn-typo-subheader content">ระบบสตาร์ท/ดับรถโดยไม่ใช้กุญแจ (Keyless Start/Stop)</div>
+                        </div>
+                        @end
+                @endeach             
+
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '20'  && carFeture.attributes.text == 'Power Window')                            
+                        <div class="cmn-car-features-row">
+                            <i class="cmn-correct-icon"></i>
+                            <div class="cmn-typo-subheader content">ระบบเลื่อนกระจกอัตโนมัติ (Power Window)</div>
+                        </div>
+                        @end
+                @endeach  
+
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '13'  && carFeture.attributes.text == 'Brake Assist System')                            
+                            <div class="cmn-car-features-row ">
+                                <i class="cmn-correct-icon"></i>
+                                <div class="cmn-typo-subheader content">ระบบเสริมแรงเบรก (Brake Assist System)</div>
+                            </div>
+                        @end
+                @endeach 
+             
+
+                {{--  <div class="cmn-car-features-row">
+                    <i class="cmn-correct-icon"></i>
+                    <div class="cmn-typo-subheader content">รีโมทรถ</div>
+                </div>  --}}
+
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '21'  && carFeture.attributes.text == 'Alloy Wheels')                            
+                            <div class="cmn-car-features-row">
+                                <i class="cmn-correct-icon"></i>
+                                <div class="cmn-typo-subheader content">ล้อแม็กซ์</div>
+                            </div>
+                        @end
+                @endeach 
+
+               
+                {{--  <div class="cmn-car-features-row not-included">
+                    <i class="cmn-correct-icon"></i>
+                    <div class="cmn-typo-subheader content">วัสดุของเบาะ</div>
+                </div>  --}}
+
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '6'  && carFeture.attributes.text == 'Multimedia')                            
+                        <div class="cmn-car-features-row">
+                            <i class="cmn-correct-icon"></i>
+                            <div class="cmn-typo-subheader content">สื่อมัลติมีเดีย (MP3)</div>
+                        </div>
+                        @end
+                @endeach  
+
+                
+
+                {{--  <div class="cmn-car-features-row not-included">
+                    <i class="cmn-correct-icon"></i>
+                    <div class="cmn-typo-subheader content">เครื่องยนต์ไฮบริด</div>
+                </div>  --}}
+
+                {{--  <div class="cmn-car-features-row not-included">
+                    <i class="cmn-correct-icon"></i>
+                    <div class="cmn-typo-subheader content">เทอร์โบชาร์จเจอร์ (Turbo Charger)</div>
+                </div>  --}}
+
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '23'  && carFeture.attributes.text == 'Fog Lamp')                            
+                        <div class="cmn-car-features-row">
+                            <i class="cmn-correct-icon"></i>
+                            <div class="cmn-typo-subheader content">ไฟตัดหมอก</div>
+                        </div>
+                        @end
+                @endeach  
+
+                @each(carFeture in carFeture)
+                        @if(carFeture.id == '7'  && carFeture.attributes.text == 'Headlights')                            
+                        <div class="cmn-car-features-row">
+                            <i class="cmn-correct-icon"></i>
+                            <div class="cmn-typo-subheader content">ไฟหน้า (LED)</div>
+                        </div>
+                        @end
+                @endeach 
+
+              
+
+             
+                {{-- <button class="cmn-show-features-not-in cmn-typo-subheader">ซ่อนอุปกรณ์ที่ไม่ได้รวมอยู่</button> --}}
+            </div>
+        </div>
+    </div>
+</div>

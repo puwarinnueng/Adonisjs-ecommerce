@@ -1,0 +1,67 @@
+<div class="card">
+    <div class="cmn-collapse FilterCarList__container hidden-tablet-down">
+        <button class="cmn-collapse-header FilterCarList__collapseButton" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            <span class="cmn-typo-subheader FilterCarList__titleButton">ปี</span>
+            <span class="cmn-collapse-header-icon"> </span>
+            <span class="cmn-collapse-text-value"> </span>
+        </button>
+    </div>
+
+    <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="cmn-collapse-content">
+            <div class="FilterCarListOption__optionContainer">
+                <button class="FilterCarListOption FilterCarListOption__bound {{year0}}" onclick="allyear()"><span class="FilterCarListOption__text">ทุกปี</span></button>
+                {{--  <button class="FilterCarListOption FilterCarListOption__bound active" onclick="allyear()"><span class="FilterCarListOption__text">ทุกปี</span></button>  --}}
+                <button class="FilterCarListOption FilterCarListOption__bound {{request.qs().active_year?.includes('less3') ? 'active': ''}}" onclick="year3()"><span class="FilterCarListOption__text">ต่ำกว่า 3 ปี</span></button>
+                <button class="FilterCarListOption FilterCarListOption__bound {{request.qs().active_year?.includes('3-6') ? 'active': ''}}" onclick="year3_6()"><span class="FilterCarListOption__text">3-6 ปี</span></button>
+                <div class="FilterCarListOption__bound">กำหนดเอง</div>
+                <div class="FilterCarListOption__bound">
+                    <div class="input-between">
+                        <div class="input-between__first"><input name="minYear" class="input-between__input" placeholder="ต่ำสุด" type="number" value="" onkeyup="minYear(value)"/></div>
+
+                        <div class="input-between__dash"><span>-</span></div>
+                        <div class="input-between__second"><input name="maxYear" class="input-between__input" placeholder="สูงสุด" type="number" value="" onkeyup="maxYear(value)"/></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function allyear(){
+        window.location = `/cars`;  
+    }
+    function year3(min_year=2018,active_year='less3'){
+        let url = window.location.pathname + window.location.search
+        url = addQuery(url, 'page', 1)
+        url = addQuery(url, 'min_year', min_year )
+        url = addQuery(url, 'max_year', "" )
+        url = addQuery(url, 'active_year', active_year)
+        window.location = url 
+    }
+    function year3_6(min_year=2015 , max_year=2018 , active_year='3-6'){
+        let url = window.location.pathname + window.location.search
+        url = addQuery(url, 'page', 1)
+        url = addQuery(url, 'min_year', min_year )
+        url = addQuery(url, 'max_year', max_year )
+        url = addQuery(url, 'active_year', active_year)
+        window.location = url 
+    }
+    function minYear(value , active_year='typing'){
+        min_year = value    
+        let url = window.location.pathname + window.location.search
+        // url = addQuery(url, 'page', 1)
+        url = addQuery(url, 'min_year', min_year )
+        url = addQuery(url, 'active_year', active_year)
+        window.location = url
+    }
+    function maxYear(value, active_year='typing' ){
+        max_year = value
+        let url = window.location.pathname + window.location.search
+        // url = addQuery(url, 'page', 1)
+        url = addQuery(url, 'max_year', max_year )
+        url = addQuery(url, 'active_year', active_year)
+        window.location = url
+    }
+
+</script>

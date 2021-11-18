@@ -1,0 +1,98 @@
+{{--  กรองราคา  --}}
+<div class="FilterCarListOption__optionContainer">
+    <button class="FilterCarListOption FilterCarListOption__bound {{price0}}" onclick="allprice()">
+        <span class="FilterCarListOption__text">ทุกราคา</span>
+    </button>
+
+    {{--  <a href="{{makeUrl({page:1 ,min_price: 0,max_price:200000, active_price: 'less200k'}, true)}}">
+        <button class="FilterCarListOption FilterCarListOption__bound   {{request.qs().active_price?.includes('less200k') ? 'active': ''}}" onclick="">
+            <span class="FilterCarListOption__text">ต่ำกว่า 200,000บาท</span>
+        </button>
+    </a>  --}}
+
+    <button class="FilterCarListOption FilterCarListOption__bound   {{request.qs().active_price?.includes('less200k') ? 'active': ''}}" onclick="price200k()">
+        <span class="FilterCarListOption__text">200,000 - 500,000 บาท</span>
+    </button>
+
+    <button class="FilterCarListOption FilterCarListOption__bound   {{request.qs().active_price?.includes('200k-500k') ? 'active': ''}}" onclick="price200k_500k()">
+        <span class="FilterCarListOption__text">200,000 - 500,000 บาท</span>
+    </button>
+
+    <button class="FilterCarListOption FilterCarListOption__bound  {{request.qs().active_price?.includes('500k-800k') ? 'active': ''}}" onclick="price500k_800k()">
+        <span class="FilterCarListOption__text">500,000 - 800,000 บาท</span>
+    </button>
+    <button class="FilterCarListOption FilterCarListOption__bound  {{request.qs().active_price?.includes('more800k') ? 'active': ''}}" onclick="up800k()">
+        <span class="FilterCarListOption__text">สูงกว่า 800,000 บาท</span>
+    </button>
+    <div class="FilterCarListOption__bound">กำหนดเอง</div>
+    <div class="FilterCarListOption__bound">
+        <div class="input-between">
+            <div class="input-between__first">
+                <input name="minPrice" class="input-between__input" placeholder="ต่ำสุด" type="number" value="" onkeyup="minPrice(value)"></div>
+            <div class="input-between__dash"><span>-</span></div>
+            <div class="input-between__second">
+                <input name="maxPrice" class="input-between__input " placeholder="สูงสุด" type="number" value="" onkeyup="maxPrice(value)"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+     function allprice(){
+        window.location = `/cars`;  
+     }
+     function price200k(min_price=0 , max_price = 200000, active_price ='less200k') {
+        let url = window.location.pathname + window.location.search
+        url = addQuery(url, 'page', 1)
+        url = addQuery(url, 'min_price', min_price )
+        url = addQuery(url, 'max_price', max_price )
+        url = addQuery(url, 'active_price', active_price)
+        window.location = url
+
+        // window.location = `/cars?max_price=${max_price}&active_price=${active_price}`;  
+    }
+
+
+
+    
+    function price200k_500k(min_price=200000 , max_price=500000, active_price='200k-500k'){
+        let url = window.location.pathname + window.location.search
+        url = addQuery(url, 'page', 1)
+        url = addQuery(url, 'min_price', min_price )
+        url = addQuery(url, 'max_price', max_price )
+        url = addQuery(url, 'active_price', active_price)
+        window.location = url
+    }
+    function price500k_800k(min_price=500000 , max_price=800000, active_price='500k-800k'){
+        let url = window.location.pathname + window.location.search
+        url = addQuery(url, 'page', 1)
+        url = addQuery(url, 'min_price', min_price )
+        url = addQuery(url, 'max_price', max_price )
+        url = addQuery(url, 'active_price', active_price)
+        window.location = url
+    }
+    function up800k(min_price=800000 , active_price='more800k'){
+        let url = window.location.pathname + window.location.search
+        url = addQuery(url, 'page', 1)
+        url = addQuery(url, 'min_price', min_price )
+        url = addQuery(url, 'max_price', "" )
+        url = addQuery(url, 'active_price', active_price)
+        window.location = url
+    }
+    function minPrice(value , active_price='typing'){
+        min_price = value    
+        let url = window.location.pathname + window.location.search
+        // url = addQuery(url, 'page', 1)
+        url = addQuery(url, 'min_price', min_price )
+        url = addQuery(url, 'active_price', active_price)
+        window.location = url
+    }
+    function maxPrice(value, active_price='typing' ){
+        max_price = value
+        let url = window.location.pathname + window.location.search
+        // url = addQuery(url, 'page', 1)
+        url = addQuery(url, 'max_price', max_price )
+        url = addQuery(url, 'active_price', active_price)
+        window.location = url
+    }
+
+</script>

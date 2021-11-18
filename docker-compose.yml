@@ -1,0 +1,22 @@
+version: "3"
+services:
+  app:
+    build: .
+    ports: 
+      - 3333:3333
+    environment:
+      HOST: '0.0.0.0'
+      PORT: '3333'
+      NODE_ENV: development
+      APP_KEY: ZIZaJkttDzYISYJ_3GH1ESJVm1SN6v80
+      DRIVE_DISK: local
+      SESSION_DRIVER: cookie
+      CACHE_VIEWS: 'false'
+    volumes:
+      - .:/usr/src/app
+
+      
+
+  
+
+

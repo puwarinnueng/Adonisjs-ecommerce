@@ -1,0 +1,94 @@
+<div class="cmn-collapse-content">
+   <div class="FilterCarListOption__optionContainer">
+       {{--  <button class="FilterCarListOption FilterCarListOption__bound active">  --}}
+        <button class="FilterCarListOption FilterCarListOption__bound {{bodyActive0}}">
+           <span class="FilterCarListOption__text">
+               <h6>หารถบ้าน ตามประเภท</h6>
+           </span>
+       </button>
+       <div class="FilterCarListOption__bound">
+           <div class="FilterCarListOption__halfContainer">
+               <button class="BodyTypeButton  {{request.qs().car_type?.includes('1') ? 'active': ''}}" onclick="filterByBody(1)">
+                   <img class="BodyTypeButton__image" src="images/icons/car-type-sedan.svg" alt="รถเก๋ง" />
+                   <span class="BodyTypeButton__text">
+                       <h6>รถเก๋ง</h6>
+                   </span>
+               </button>
+           </div>
+           <div class="FilterCarListOption__halfContainer">
+               <button class="BodyTypeButton  {{request.qs().car_type?.includes('2') ? 'active': ''}}" onclick="filterByBody(2)">
+                   <img class="BodyTypeButton__image" src="images/icons/car-type-sedan.svg" alt="รถเก๋งขนาดเล็ก" />
+                   <span class="BodyTypeButton__text"> 
+                       <h6>รถเก๋งขนาดเล็ก</h6>
+                   </span>
+               </button>
+           </div>
+       </div>
+       <div class="FilterCarListOption__bound">
+           <div class="FilterCarListOption__halfContainer">
+               <button class="BodyTypeButton  {{request.qs().car_type?.includes('3') ? 'active': ''}}" onclick="filterByBody(3)">
+                   <img class="BodyTypeButton__image" src="https://carmana.com/static/media/car-type-hatchback.ef9bc46d.svg" alt="SUV" />
+                   <span class="BodyTypeButton__text">
+                       <h6>SUV</h6>
+                   </span>
+               </button>
+           </div>
+           <div class="FilterCarListOption__halfContainer">
+               <button class="BodyTypeButton  {{request.qs().car_type?.includes('4') ? 'active': ''}}" onclick="filterByBody(4)">
+                   <img class="BodyTypeButton__image" src="images/icons/car-type-suv.svg" alt="รถตู้อเนกประสงค์" />
+                   <span class="BodyTypeButton__text">
+                       <h6>รถตู้อเนกประสงค์</h6>
+                   </span>
+               </button>
+           </div>
+       </div>
+       <div class="FilterCarListOption__bound">
+           <div class="FilterCarListOption__halfContainer">
+               <button class="BodyTypeButton  {{request.qs().car_type?.includes('5') ? 'active': ''}}" onclick="filterByBody(5)">
+                   <img class="BodyTypeButton__image" src="images/icons/car-type-van.svg" alt="รถตู้" />
+                   <span class="BodyTypeButton__text">
+                       <h6>รถตู้</h6>
+                   </span>
+               </button>
+           </div>
+           <div class="FilterCarListOption__halfContainer">
+               <button class="BodyTypeButton  {{request.qs().car_type?.includes('6') ? 'active': ''}}" onclick="filterByBody(6)">
+                   <img class="BodyTypeButton__image" src="images/icons/car-type-pickup.svg" alt="รถปิคอัพ" />
+                   <span class="BodyTypeButton__text">
+                       <h6>รถปิคอัพ</h6>
+                   </span>
+               </button>
+           </div>
+       </div>
+       <div class="FilterCarListOption__bound">
+           <div class="FilterCarListOption__halfContainer">
+               <button class="BodyTypeButton  {{request.qs().car_type?.includes('7') ? 'active': ''}}" onclick="filterByBody(7)">
+                   <img class="BodyTypeButton__image" src="images/icons/car-type-coupe.svg" alt="รถสปอร์ต" />
+                   <span class="BodyTypeButton__text">
+                       <h6>รถสปอร์ต</h6>
+                   </span>
+               </button>
+           </div>
+       </div>
+   </div>
+</div>
+
+ <script>
+      const car_type = '{{request.qs().car_type || ''}}' 
+
+    function filterByBody(color){
+        let url = window.location.pathname + window.location.search
+
+        let cartype = car_type ? car_type?.split(',') : []
+        cartype.push(color)
+        cartype.map(c => {
+            url = addQuery(url, 'car_type[]', c, c )
+        })
+
+        url = addQuery(url, 'page', 1)
+        window.location = url
+
+
+        // window.location = `/cars?car_color=${color}`;     
+    }
+ </script>

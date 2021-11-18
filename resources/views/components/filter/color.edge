@@ -1,0 +1,149 @@
+{{--  กรองสี  --}}
+<div class="cmn-collapse-content">
+    <div class="FilterCarListOption__optionContainer"><button onclick="allcolor()"
+            class="FilterCarListOption FilterCarListOption__bound {{colorActive0}}"><span
+                class="FilterCarListOption__text">สีทั้งหมด</span></button>
+        <div class="FilterCarListOption__bound">
+                {{--  <div class="FilterCarListOption__halfContainer">
+                    <div class="FilterCarListOption FilterCarListOption__textCheckbox ">
+                        <div class="cmn-form-checkbox FilterCarListOption__clearMarginCheckbox">
+                                <input id="-white" name="" class="cmn-form-checkbox-input " type="checkbox" value="white"
+                                 onclick="window.location = '{{request.qs().car_color?.includes('white') ? makeUrl({page:1, car_color: request.qs().car_color.filter(i => i!= 'white') }, true, false) : makeUrl({page:1, car_color:['white']  }, true, true) }}';"
+                                 {{request.qs().car_color?.includes('white') ? 'checked': ''}}
+                                 ><label
+                                 class="cmn-form-checkbox-label" for="-white"></label>
+                        </div><button class="TextButton">ขาว</button>
+                    </div>
+                </div>  --}}
+                <div class="FilterCarListOption__halfContainer">
+                    <div class="FilterCarListOption FilterCarListOption__textCheckbox ">
+                        <div class="cmn-form-checkbox FilterCarListOption__clearMarginCheckbox">
+                            <input id="-white" name="" class="cmn-form-checkbox-input" type="checkbox" onclick="filterByColor('white')"  value="white" {{request.qs().car_color?.includes('white') ? 'checked': ''}}><label class="cmn-form-checkbox-label" for="-white"></label>
+                        </div><button class="TextButton  ">ขาว</button>
+                    </div>
+                </div>
+        
+                {{--  <div class="FilterCarListOption__halfContainer">
+                    <div class="FilterCarListOption FilterCarListOption__textCheckbox ">
+                        <div class="cmn-form-checkbox FilterCarListOption__clearMarginCheckbox">
+                            <input id="-black" name="" class="cmn-form-checkbox-input " type="checkbox" value="black"
+                            onclick="window.location = '{{request.qs().car_color?.includes('black') ? makeUrl({page:1, car_color: request.qs().car_color.filter(i => i!= 'black') }, true, false) : makeUrl({page:1, car_color:['black']  }, true, true) }}';"
+                            {{request.qs().car_color?.includes('black') ? 'checked': ''}}
+                            ><label
+                                class="cmn-form-checkbox-label" for="-black"></label>
+                        </div><button class="TextButton  ">ดำ</button>
+                    </div>
+                </div>  --}}
+                <div class="FilterCarListOption__halfContainer">
+                    <div class="FilterCarListOption FilterCarListOption__textCheckbox ">
+                        <div class="cmn-form-checkbox FilterCarListOption__clearMarginCheckbox">
+                            <input id="-black" name="" class="cmn-form-checkbox-input" type="checkbox" onclick="filterByColor('black')"  value="black" {{request.qs().car_color?.includes('black') ? 'checked': ''}}><label class="cmn-form-checkbox-label" for="-black"></label>
+                        </div><button class="TextButton  ">ดำ</button>
+                    </div>
+                </div>
+             
+               
+           
+        </div>
+        <div class="FilterCarListOption__bound">
+            <div class="FilterCarListOption__halfContainer">
+                <div class="FilterCarListOption FilterCarListOption__textCheckbox ">
+                    <div class="cmn-form-checkbox FilterCarListOption__clearMarginCheckbox">
+                        <input id="-silver" name="" class="cmn-form-checkbox-input" type="checkbox" onclick="filterByColor('silver')"  value="silver" {{request.qs().car_color?.includes('silver') ? 'checked': ''}}><label class="cmn-form-checkbox-label" for="-silver"></label>
+                    </div><button class="TextButton  ">เงิน</button>
+                </div>
+            </div>
+            <div class="FilterCarListOption__halfContainer">
+                <div class="FilterCarListOption FilterCarListOption__textCheckbox ">
+                    <div class="cmn-form-checkbox FilterCarListOption__clearMarginCheckbox">
+                        <input id="-gray" name="" class="cmn-form-checkbox-input " type="checkbox" value="gray" onclick="filterByColor('gray')" {{request.qs().car_color?.includes('gray') ? 'checked': ''}}><label
+                            class="cmn-form-checkbox-label" for="-gray"></label>
+                    </div><button class="TextButton  ">เทา</button>
+                </div>
+            </div>
+        </div>
+        <div class="FilterCarListOption__bound">
+            <div class="FilterCarListOption__halfContainer">
+                <div class="FilterCarListOption FilterCarListOption__textCheckbox ">
+                    <div class="cmn-form-checkbox FilterCarListOption__clearMarginCheckbox">
+                        <input id="-red" name="" class="cmn-form-checkbox-input " type="checkbox" value="red" onclick="filterByColor('red')" {{request.qs().car_color?.includes('red') ? 'checked': ''}}><label
+                            class="cmn-form-checkbox-label" for="-red"></label>
+                    </div><button class="TextButton  ">แดง</button>
+                </div>
+            </div>
+            <div class="FilterCarListOption__halfContainer">
+                <div class="FilterCarListOption FilterCarListOption__textCheckbox ">
+                    <div class="cmn-form-checkbox FilterCarListOption__clearMarginCheckbox">
+                        <input id="-blue" name="" class="cmn-form-checkbox-input " type="checkbox" value="blue" onclick="filterByColor('blue')" {{request.qs().car_color?.includes('blue') ? 'checked': ''}}><label
+                            class="cmn-form-checkbox-label" for="-blue"></label>
+                    </div><button class="TextButton">น้ำเงิน</button>
+                </div>
+            </div>
+        </div>
+        <div class="FilterCarListOption__bound">
+            <div class="FilterCarListOption__halfContainer">
+                <div class="FilterCarListOption FilterCarListOption__textCheckbox ">
+                    <div class="cmn-form-checkbox FilterCarListOption__clearMarginCheckbox">
+                        <input id="-brown" name="" class="cmn-form-checkbox-input " type="checkbox" value="brown" onclick="filterByColor('brown')" {{request.qs().car_color?.includes('brown') ? 'checked': ''}}><label
+                            class="cmn-form-checkbox-label" for="-brown"></label>
+                    </div><button class="TextButton">น้ำตาล/เบจ</button>
+                </div>
+            </div>
+            <div class="FilterCarListOption__halfContainer">
+                <div class="FilterCarListOption FilterCarListOption__textCheckbox ">
+                    <div class="cmn-form-checkbox FilterCarListOption__clearMarginCheckbox">
+                        <input id="-yellow" name="" class="cmn-form-checkbox-input " type="checkbox" onclick="filterByColor('yellow')" value="yellow" {{request.qs().car_color?.includes('yellow') ? 'checked': ''}}><label class="cmn-form-checkbox-label" for="-yellow"></label>
+                    </div><button class="TextButton  ">เหลือง/ทอง</button>
+                </div>
+            </div>
+        </div>
+        <div class="FilterCarListOption__bound">
+            <div class="FilterCarListOption__halfContainer">
+                <div class="FilterCarListOption FilterCarListOption__textCheckbox ">
+                    <div class="cmn-form-checkbox FilterCarListOption__clearMarginCheckbox">
+                        <input id="-green" name="" class="cmn-form-checkbox-input " type="checkbox" value="green" onclick="filterByColor('green')"  {{request.qs().car_color?.includes('green') ? 'checked': ''}}><label
+                            class="cmn-form-checkbox-label" for="-green"></label>
+                    </div><button class="TextButton  ">เขียว</button>
+                </div>
+            </div>
+            <div class="FilterCarListOption__halfContainer">
+                <div class="FilterCarListOption FilterCarListOption__textCheckbox ">
+                    <div class="cmn-form-checkbox FilterCarListOption__clearMarginCheckbox">
+                        <input id="-other" name="" class="cmn-form-checkbox-input " type="checkbox" value="other" onclick="filterByColor('other')"   {{request.qs().car_color?.includes('other') ? 'checked': ''}}><label
+                            class="cmn-form-checkbox-label" for="-other"></label>
+                    </div><button class="TextButton  ">อื่นๆ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+     function allcolor(){
+        window.location = " {{  route('/cars') }} "; 
+    }
+    
+    
+    const car_color = '{{request.qs().car_color || ''}}'   
+    function filterByColor(color){
+        let url = window.location.pathname + window.location.search
+
+        let colors = car_color ? car_color?.split(',') : []
+        colors.push(color)
+        colors.map(c => {
+            url = addQuery(url, 'car_color[]', c, c )
+        })
+        
+
+        url = addQuery(url, 'page', 1)
+        window.location = url
+
+
+        // window.location = `/cars?car_color=${color}`;     
+    }
+
+  
+</script>

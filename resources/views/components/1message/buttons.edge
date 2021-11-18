@@ -1,0 +1,98 @@
+{{--  สี  --}}
+<button onclick="window.location.href = (removeQuery('car_color[]', 'white'))" {{request.qs().car_color?.includes('white') ? '': 'hidden'}}>สีขาว X</button>
+<button onclick="window.location.href = (removeQuery('car_color[]', 'black'))" {{request.qs().car_color?.includes('black') ? '': 'hidden'}}>สีดำ X</button>
+<button onclick="window.location.href = (removeQuery('car_color[]', 'silver'))" {{request.qs().car_color?.includes('silver') ? '': 'hidden'}}>สีเงิน X</button>
+<button onclick="window.location.href = (removeQuery('car_color[]', 'gray'))" {{request.qs().car_color?.includes('gray') ? '': 'hidden'}}>สีเทา X</button>
+<button onclick="window.location.href = (removeQuery('car_color[]', 'red'))" {{request.qs().car_color?.includes('gray') ? '': 'hidden'}}>สีแดง X</button>
+<button onclick="window.location.href = (removeQuery('car_color[]', 'blue'))" {{request.qs().car_color?.includes('blue') ? '': 'hidden'}}>สีน้ำเงิน X</button>
+<button onclick="window.location.href = (removeQuery('car_color[]', 'brown'))" {{request.qs().car_color?.includes('brown') ? '': 'hidden'}}>น้ำตาล/เบจ X</button>
+<button onclick="window.location.href = (removeQuery('car_color[]', 'yellow'))" {{request.qs().car_color?.includes('yellow') ? '': 'hidden'}}>เหลือง/ทอง X</button>
+<button onclick="window.location.href = (removeQuery('car_color[]', 'green'))" {{request.qs().car_color?.includes('green') ? '': 'hidden'}}>สีเขียว X</button>
+<button onclick="window.location.href = (removeQuery('car_color[]', 'other'))" {{request.qs().car_color?.includes('other') ? '': 'hidden'}}>สีอื่นๆ X</button>
+{{--  ระยะวิ่ง  --}}
+<button onclick="window.location.href = '/cars'" {{request.qs().active_mileage?.includes('0-50k') ? '': 'hidden'}}>ระยะวิ่ง 0-50,000 กม X</button>
+<button onclick="window.location.href = '/cars'" {{request.qs().active_mileage?.includes('0-100k') ? '': 'hidden'}}>ระยะวิ่ง 0-100,000 กม X</button>
+<button onclick="window.location.href = '/cars'" {{request.qs().active_mileage?.includes('typing') ? '': 'hidden'}}>ระยะวิ่ง ที่กำหนดเอง X</button>
+{{--  รูปแบบตัวถัง  --}}
+<button onclick="window.location.href = (removeQuery('car_type[]', '1'))" {{request.qs().car_type?.includes('1') ? '': 'hidden'}}>รถเก๋ง X</button>
+<button onclick="window.location.href = (removeQuery('car_type[]', '2'))" {{request.qs().car_type?.includes('2') ? '': 'hidden'}}>รถเก๋งขนาดเล็ก X</button>
+<button onclick="window.location.href = (removeQuery('car_type[]', '3'))" {{request.qs().car_type?.includes('3') ? '': 'hidden'}}>suv X</button>
+<button onclick="window.location.href = (removeQuery('car_type[]', '4'))" {{request.qs().car_type?.includes('4') ? '': 'hidden'}}>รถตู้อเนกประสงค์ X</button>
+<button onclick="window.location.href = (removeQuery('car_type[]', '5'))" {{request.qs().car_type?.includes('5') ? '': 'hidden'}}>รถตู้ X</button>
+<button onclick="window.location.href = (removeQuery('car_type[]', '6'))" {{request.qs().car_type?.includes('6') ? '': 'hidden'}}>รถปิกอัฟ X</button>
+<button onclick="window.location.href = (removeQuery('car_type[]', '7'))" {{request.qs().car_type?.includes('7') ? '': 'hidden'}}>รถสปอร์ต X</button>
+{{--  ปี  --}}
+<button onclick="window.location.href = '/cars'" {{request.qs().active_year?.includes('less3') ? '': 'hidden'}}>ต่ำกว่า 3 ปี X</button>
+<button onclick="window.location.href = '/cars'" {{request.qs().active_year?.includes('3-6') ? '': 'hidden'}}>3 ถึง 6 ปี  X</button>
+<button onclick="window.location.href = '/cars'" {{request.qs().active_year?.includes('typing') ? '': 'hidden'}}>กำหนดปีเอง  X</button>
+{{--  ราคา  --}}
+<button onclick="window.location.href = '/cars'" {{request.qs().active_price?.includes('less200k') ? '': 'hidden'}}>ต่ำกว่า 200,000  X</button>
+<button onclick="window.location.href = '/cars'" {{request.qs().active_price?.includes('200k-500k') ? '': 'hidden'}}>200,000 ถึง 500,000  X</button>
+<button onclick="window.location.href = '/cars'" {{request.qs().active_price?.includes('500k-800k') ? '': 'hidden'}}>500,000 ถึง 800,000  X</button>
+<button onclick="window.location.href = '/cars'" {{request.qs().active_price?.includes('more800k') ? '': 'hidden'}}>มากกว่า 800,000  X</button>
+<button onclick="window.location.href = '/cars'" {{request.qs().active_price?.includes('typing') ? '': 'hidden'}}>กำหนดเอง  X</button>
+{{--  ยี่ห้อรถ  --}}
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '1'))" {{request.qs().carBrandAndModel?.includes('1') ? '': 'hidden'}}>Alfa Romero X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '2'))" {{request.qs().carBrandAndModel?.includes('2') ? '': 'hidden'}}>Astan Martin X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '3'))" {{request.qs().carBrandAndModel?.includes('3') ? '': 'hidden'}}>Audi X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '4'))" {{request.qs().carBrandAndModel?.includes('4') ? '': 'hidden'}}>Bentley X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '5'))" {{request.qs().carBrandAndModel?.includes('5') ? '': 'hidden'}}>BMW X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '6'))" {{request.qs().carBrandAndModel?.includes('6') ? '': 'hidden'}}>Chery X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '7'))" {{request.qs().carBrandAndModel?.includes('7') ? '': 'hidden'}}>Chevrolet X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '8'))" {{request.qs().carBrandAndModel?.includes('8') ? '': 'hidden'}}>Chrysler X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '9'))" {{request.qs().carBrandAndModel?.includes('9') ? '': 'hidden'}}>Citroen X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '10'))" {{request.qs().carBrandAndModel?.includes('10') ? '': 'hidden'}}>Daewoo X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '11'))" {{request.qs().carBrandAndModel?.includes('11') ? '': 'hidden'}}>Daihatsu X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '12'))" {{request.qs().carBrandAndModel?.includes('12') ? '': 'hidden'}}>Dfm X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '13'))" {{request.qs().carBrandAndModel?.includes('13') ? '': 'hidden'}}>Ferrari X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '14'))" {{request.qs().carBrandAndModel?.includes('14') ? '': 'hidden'}}>Fiat X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '15'))" {{request.qs().carBrandAndModel?.includes('15') ? '': 'hidden'}}>Ford X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '16'))" {{request.qs().carBrandAndModel?.includes('16') ? '': 'hidden'}}>Foton X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '17'))" {{request.qs().carBrandAndModel?.includes('17') ? '': 'hidden'}}>Holden X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '18'))" {{request.qs().carBrandAndModel?.includes('18') ? '': 'hidden'}}>Honda X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '19'))" {{request.qs().carBrandAndModel?.includes('19') ? '': 'hidden'}}>Hummer X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '20'))" {{request.qs().carBrandAndModel?.includes('20') ? '': 'hidden'}}>Hyundai X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '21'))" {{request.qs().carBrandAndModel?.includes('21') ? '': 'hidden'}}>Isuzu X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '22'))" {{request.qs().carBrandAndModel?.includes('22') ? '': 'hidden'}}>Jaguar X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '23'))" {{request.qs().carBrandAndModel?.includes('23') ? '': 'hidden'}}>Jeep X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '24'))" {{request.qs().carBrandAndModel?.includes('24') ? '': 'hidden'}}>Kia X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '25'))" {{request.qs().carBrandAndModel?.includes('25') ? '': 'hidden'}}>Lamborghini X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '26'))" {{request.qs().carBrandAndModel?.includes('26') ? '': 'hidden'}}>Land Rover X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '27'))" {{request.qs().carBrandAndModel?.includes('27') ? '': 'hidden'}}>Lexus X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '28'))" {{request.qs().carBrandAndModel?.includes('28') ? '': 'hidden'}}>Lotus X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '29'))" {{request.qs().carBrandAndModel?.includes('29') ? '': 'hidden'}}>Maserati X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '30'))" {{request.qs().carBrandAndModel?.includes('30') ? '': 'hidden'}}>Maxus X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '31'))" {{request.qs().carBrandAndModel?.includes('31') ? '': 'hidden'}}>Mazda X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '32'))" {{request.qs().carBrandAndModel?.includes('32') ? '': 'hidden'}}>Mclaren X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '33'))" {{request.qs().carBrandAndModel?.includes('33') ? '': 'hidden'}}>Benz X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '34'))" {{request.qs().carBrandAndModel?.includes('34') ? '': 'hidden'}}>MG X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '35'))" {{request.qs().carBrandAndModel?.includes('35') ? '': 'hidden'}}>Mini X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '36'))" {{request.qs().carBrandAndModel?.includes('36') ? '': 'hidden'}}>Mitsubishi X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '37'))" {{request.qs().carBrandAndModel?.includes('37') ? '': 'hidden'}}>Mitsuoka X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '38'))" {{request.qs().carBrandAndModel?.includes('38') ? '': 'hidden'}}>Naza X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '39'))" {{request.qs().carBrandAndModel?.includes('39') ? '': 'hidden'}}>Nissan X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '40'))" {{request.qs().carBrandAndModel?.includes('40') ? '': 'hidden'}}>Opel X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '41'))" {{request.qs().carBrandAndModel?.includes('41') ? '': 'hidden'}}>Peugeot X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '42'))" {{request.qs().carBrandAndModel?.includes('42') ? '': 'hidden'}}>Polarsun X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '43'))" {{request.qs().carBrandAndModel?.includes('43') ? '': 'hidden'}}>Porsche X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '44'))" {{request.qs().carBrandAndModel?.includes('44') ? '': 'hidden'}}>Proton X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '45'))" {{request.qs().carBrandAndModel?.includes('45') ? '': 'hidden'}}>Renault X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '46'))" {{request.qs().carBrandAndModel?.includes('46') ? '': 'hidden'}}>Rolls Royce X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '47'))" {{request.qs().carBrandAndModel?.includes('47') ? '': 'hidden'}}>Rover X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '48'))" {{request.qs().carBrandAndModel?.includes('48') ? '': 'hidden'}}>Saab X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '49'))" {{request.qs().carBrandAndModel?.includes('49') ? '': 'hidden'}}>Seat X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '50'))" {{request.qs().carBrandAndModel?.includes('50') ? '': 'hidden'}}>Skoda X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '51'))" {{request.qs().carBrandAndModel?.includes('51') ? '': 'hidden'}}>Smart X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '52'))" {{request.qs().carBrandAndModel?.includes('52') ? '': 'hidden'}}>Spyker X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '53'))" {{request.qs().carBrandAndModel?.includes('53') ? '': 'hidden'}}>Ssangyong X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '54'))" {{request.qs().carBrandAndModel?.includes('54') ? '': 'hidden'}}>Subaru X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '55'))" {{request.qs().carBrandAndModel?.includes('55') ? '': 'hidden'}}>Suzuki X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '56'))" {{request.qs().carBrandAndModel?.includes('56') ? '': 'hidden'}}>Tata X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '57'))" {{request.qs().carBrandAndModel?.includes('57') ? '': 'hidden'}}>Toyota X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '58'))" {{request.qs().carBrandAndModel?.includes('58') ? '': 'hidden'}}>TR X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '59'))" {{request.qs().carBrandAndModel?.includes('59') ? '': 'hidden'}}>Volkswagen X</button>
+<button onclick="window.location.href = (removeQuery('carBrandAndModel[]', '60'))" {{request.qs().carBrandAndModel?.includes('60') ? '': 'hidden'}}>Volvo X</button>
+
+
+
+

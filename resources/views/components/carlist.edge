@@ -1,0 +1,45 @@
+@each(alldata in alldata)                                             
+<div class="CarCard__root">
+   
+    @each(photo in alldata.photos) 
+       @if(photo.include && photo.include.attributes['photo-type'] == 'front')
+         <a class="CarCard__blockImage CarCard__link topThreeImage" href="/car/{{alldata.id}}" style="background-image: url(&quot;{{photo.include.attributes['medium-url']}}&quot;);"></a>
+       @endif
+    @endeach
+
+    <div class="CarCard__blockDescription">
+        <a class="CarCard__link" href="/car/{{alldata.id}}">
+            <div class="CarCard__headerDescription">
+                <h3 class="cmn-typo-h3 CarCard__customH3"> {{alldata.relationships['redbook-info'].data.include.attributes['year-group']}}</h3>
+            </div>
+                    
+            <div class="CarCard__carNo">
+                <h3 class="cmn-typo-h3 CarCard__customH3">No. {{alldata.id}}</h3>
+            </div>
+           
+            <h6 class="textnamecars">{{alldata.attributes.name}}</h6>
+            <span class="cmn-typo-caption CarCard__customCaption">
+  
+            {{  (new Intl.NumberFormat().format(alldata.attributes.mileage)) }}
+
+                km</span>
+        </a>
+        <div class="CarCard__footerDescription">
+            <h3  class="cmn-typo-h3 CarCard__customH3 CarCard__price"><span class="car-currency">฿</span>&nbsp;   
+           
+            {{  (new Intl.NumberFormat().format(alldata.attributes.price)) }}
+        
+             
+             </h3>
+            <button class="CarCard__wishlistButton"><i class="icon cmn-heart-icon "></i></button>
+        </div>
+    </div>
+</div>         
+@endeach
+
+
+
+
+
+
+

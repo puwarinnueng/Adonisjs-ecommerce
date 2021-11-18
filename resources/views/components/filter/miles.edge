@@ -1,0 +1,80 @@
+<div class="card">
+   <div class="cmn-collapse FilterCarList__container hidden-tablet-down">
+      <button class="cmn-collapse-header FilterCarList__collapseButton" type="button"
+         data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+         aria-controls="collapseSix">
+      <span class="cmn-typo-subheader FilterCarList__titleButton">ระยะวิ่ง</span>
+      <span class="cmn-collapse-header-icon">
+      </span>
+      <span class="cmn-collapse-text-value">
+      </span>
+      </button>
+   </div>
+   <div id="collapseSix" class="collapse" aria-labelledby="headingThree"
+      data-parent="#accordionExample">
+      <div class="cmn-collapse-content">
+         <div class="FilterCarListOption__optionContainer">
+           {{--  <button class="FilterCarListOption FilterCarListOption__bound active">  --}}
+           <button class="FilterCarListOption FilterCarListOption__bound {{mile0}}" onclick="allmile()">
+               <span class="FilterCarListOption__text">ระยะทางวิ่งทั้งหมด</span>
+           </button>
+           <button class="FilterCarListOption FilterCarListOption__bound  {{request.qs().active_mileage?.includes('0-50k') ? 'active': ''}}" onclick="mile50k()">
+               <span class="FilterCarListOption__text">0 - 50,000<span>กม.</span></span>
+           </button>
+           <button class="FilterCarListOption FilterCarListOption__bound {{request.qs().active_mileage?.includes('0-100k') ? 'active': ''}}" onclick="mile100k()">
+               <span class="FilterCarListOption__text">0 - 100,000
+            <span>กม.</span></span>
+           </button>
+            <div class="FilterCarListOption__bound">กำหนดเอง</div>
+            <div class="FilterCarListOption__bound">
+               <div class="input-between ">
+                  <div class="input-between__first">
+                   <input name="minMileage" class="input-between__input " placeholder="ต่ำสุด" type="number" value="" onkeyup="minMile(value)"></div>
+                 
+                   <div class="input-between__dash"><span>-</span></div>
+
+                  <div class="input-between__second">
+                   <input name="maxMileage"class="input-between__input " placeholder="สูงสุด" type="number" value="" onkeyup="maxnMile(value)"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<script>
+   function allmile(){
+        window.location = `/cars`;  
+   }
+   function mile50k( min_mileage=0 , max_mileage=50000 , active_mileage='0-50k'){
+      let url = window.location.pathname + window.location.search
+      //   url = addQuery(url, 'page', 1)
+        url = addQuery(url, 'min_mileage', min_mileage )
+        url = addQuery(url, 'max_mileage', max_mileage )
+        url = addQuery(url, 'active_mileage', active_mileage)
+        window.location = url
+   }
+   function mile100k(min_mileage=0 , max_mileage=100000 , active_mileage='0-100k'){
+      let url = window.location.pathname + window.location.search
+      //   url = addQuery(url, 'page', 1)
+        url = addQuery(url, 'min_mileage', min_mileage )
+        url = addQuery(url, 'max_mileage', max_mileage )
+        url = addQuery(url, 'active_mileage', active_mileage)
+        window.location = url
+   }
+   function minMile(value , active_mileage='typing'){
+        min_mileage = value    
+        let url = window.location.pathname + window.location.search
+        // url = addQuery(url, 'page', 1)
+        url = addQuery(url, 'min_mileage', min_mileage )
+        url = addQuery(url, 'active_mileage', active_mileage)
+        window.location = url
+   }
+   function maxnMile(value , active_mileage='typing'){
+        max_mileage = value    
+        let url = window.location.pathname + window.location.search
+        // url = addQuery(url, 'page', 1)
+        url = addQuery(url, 'max_mileage', max_mileage )
+        url = addQuery(url, 'active_mileage', active_mileage)
+        window.location = url
+   }
+</script>

@@ -1,0 +1,58 @@
+{{--  @each((photo , index) in alldata.photos )
+<div class="column">
+    <li class="thumb" aria-label="slide item 1" role="button" tabindex="0" style="width: 80px;">
+        <img class="demo cursor" src="{{photo.include.attributes?.['medium-url']}}" style="width: 100%;" onclick="currentSlide({{index + 1}})" alt="" />
+    </li>
+</div>
+@endeach  --}}
+
+<style>
+.items123 {
+    width: 120%;
+    margin: 0px auto;
+    margin-left: 9%
+}
+
+.slick-slide {
+    margin: 10px;  
+}
+
+.slick-slide img {
+    width: 100%;
+    border: 0px solid #fff
+}
+
+.slick-next::before, .slick-prev::before {
+  color: blue;
+}
+
+</style>
+ <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+ <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+ <div class="items123">
+        @each((photo , index) in alldata.photos )
+        <div class="column">
+            <li class="thumb" aria-label="slide item 1" role="button" tabindex="0" style="width: 80px;">
+                <img class="demo cursor" src="{{photo.include.attributes?.['medium-url']}}" style="width: 100%;" onclick="currentSlide({{index + 1}})" alt="" />
+            </li>
+        </div>
+        @endeach
+</div>
+
+<script>
+ $(document).ready(function(){
+
+$('.items123').slick({
+infinite: true,
+slidesToShow: 5,
+slidesToScroll: 5
+});
+});
+</script>
+
+
+
+
+
+

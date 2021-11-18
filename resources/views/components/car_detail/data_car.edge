@@ -1,0 +1,37 @@
+<div class="cmn-car-info">
+   <div class="cmn-details-info-container">
+       <div class="cmn-label-info">
+           {{--  แบบ1  --}}
+           <div class="cmn-typo-h2"><h3>{{alldata.attributes.name}}</h3> </div> 
+           <div class="cmn-label-spec">
+            {{(new Intl.NumberFormat().format(alldata.attributes.mileage))}}          
+            <span>km</span></div>
+           <div class="CarDetailsInfo__carmanaSalesAssistedContainer">
+               <div class="CarDetailsInfo__carNo">No. {{alldata.id}}</div>
+           </div>
+       </div>
+       <div class="cmn-details-info">
+           <div class="cmn-typo-h1 cmn-price-header"><i class="cmn-currency-icon large"></i>
+            {{(new Intl.NumberFormat().format(alldata.attributes.price))}}          
+        </div>
+           <div>
+               <div class="cmn-typo-h3 cmn-price-subheader">(<span>ค่างวด</span> <i class="cmn-currency-icon small"></i>ยังไม่ทราบ/<span>เดือน</span>)*</div>
+               <button class="cmn-btn btn-cmn primary cmn-btn-primary" type="button" onclick="window.location = 'http://localhost:3002/login2/{{alldata.id}}'"><span>ไฟแนนซ์รถ</span></button>
+           </div>
+           
+           <button class="cmn-btn btn-cmn secondary cmn-btn-secondary" type="button" onclick="window.location = 'http://localhost:3002/login2/{{alldata.id}}'"><span>ซื้อรถด้วยเงินสด</span></button>
+          
+           <button class="cmn-btn btn-cmn secondary cmn-btn-secondary" onclick="window.location = 'https://carmana.com/login'" type="button"><span>จองบริการตรวจสภาพรถ</span></button>
+           <div class="cmn-label-vary-payment"><span>* ค่างวดข้างต้นสามารถเปลี่ยนแปลงได้ ตามเงื่อนไขของสถาบันการเงินที่ท่านเลือกใช้บริการ</span></div>
+       </div>
+       <div class="cmn-social-info">
+           <button class="btn-cmn-wishlist">
+               <i class="cmn-heart-icon"></i><span class="cmn-wishlist-txt"><span>บุ๊คมาร์ค</span></span>
+           </button>
+           <span class="cmn-social-separator"></span>
+           <button class="btn-cmn-share">
+               <i class="cmn-share-icon"></i><span class="cmn-share-txt"><span>แชร์</span></span>
+           </button>
+       </div>
+   </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="brandlist-container mobile-style">
+    <div class="brandlist-items">
+        <button class="brandlist-item"><img src="images/brands/toyota.svg" alt="Toyota" onclick="filterByBrand(57)"/><span class="cmn-typo-normal">Toyota</span></button>
+        <button class="brandlist-item"><img src="images/brands/honda.svg" alt="Honda" onclick="filterByBrand(18)"/><span class="cmn-typo-normal">Honda</span></button>
+        <button class="brandlist-item"><img src="images/brands/isuzu.svg" alt="Isuzu" onclick="filterByBrand(21)"/><span class="cmn-typo-normal">Isuzu</span></button>
+        <button class="brandlist-item"><img src="images/brands/mitsubishi.svg" alt="Mitsubishi" onclick="filterByBrand(36)"/><span class="cmn-typo-normal">Mitsubishi</span></button>
+        <button class="brandlist-item"><img src="images/brands/mazda.svg" alt="Mazda" onclick="filterByBrand(31)"/><span class="cmn-typo-normal">Mazda</span></button>
+        <button class="brandlist-item"><img src="images/brands/nissan.svg" alt="Nissan" onclick="filterByBrand(39)"/><span class="cmn-typo-normal">Nissan</span></button>
+    </div>
+</div>
+
+
+<script>
+    const carBrandAndModel = '{{request.qs().carBrandAndModel || ''}}' 
+
+    function filterByBrand(color){
+        let url = window.location.pathname + window.location.search
+
+        let colors = carBrandAndModel ? carBrandAndModel?.split(',') : []
+        colors.push(color)
+        colors.map(c => {
+            url = addQuery(url, 'carBrandAndModel[]', c, c )
+        })
+
+        url = addQuery(url, 'page', 1)
+        window.location = url
+
+
+
+        // window.location = `/cars?car_color=${color}`;     
+    }
+</script>

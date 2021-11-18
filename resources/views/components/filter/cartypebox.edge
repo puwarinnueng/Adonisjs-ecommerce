@@ -1,0 +1,79 @@
+@section('body')
+@each(res in carsbox)
+
+{{--  @set(
+  res,
+  'carModels',
+  (await getCarModelsById(res.id)).data?.data
+)  --}}
+
+<div class="cmn-collapse FilterCarListOption__containerBrand " name="null-1" fieldname="brandAndModel">
+    <button class="cmn-collapse-header FilterCarListOption__buttonBrand" 
+        type="button" data-toggle="collapse" data-target="#nueng{{res.id}}" aria-expanded="false" aria-controls="nueng{{res.id}}">
+        <span class="cmn-typo-subheader">{{res.attributes.key}} 
+            {{--  {{res.id}}  --}}
+        </span>
+        <span class="cmn-collapse-text-value"></span>     
+    </button>
+
+
+    <div class="collapse" id="nueng{{res.id}}">
+        <div class="card card-body">
+            <div class="FilterCarListOption__containerModel">
+                
+                @include('components.filter.cartypebox2')   
+                @each(carsboxdetail in res.carModels)
+                   <button  class="FilterCarListOption__buttonModel" onclick="filterByModel({{carsboxdetail.id}})" >{{ carsboxdetail.attributes.text }} </button>
+                @endeach     
+
+            </div>
+        </div>
+    </div>
+</div>
+@endeach
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+       const car_model = '{{request.qs().car_model || '' }}' 
+       function filterByModel(color){
+        console.log(color)
+        let url = window.location.pathname + window.location.search
+
+        let model = car_model ? car_model?.split(',') : []
+        model.push(color)
+        model.map(c => {
+            url = addQuery(url, 'car_model[]', c, c )
+        })
+
+        url = addQuery(url, 'page', 1)
+        window.location = url
+        // window.location = `/cars?car_color=${color}`;           
+    }
+</script>
+
+
+
