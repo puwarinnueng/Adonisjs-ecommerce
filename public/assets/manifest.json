@@ -1,12 +1,12 @@
 {
   "assets/app.css": "http://localhost:8080/assets/app.css",
   "assets/app.js": "http://localhost:8080/assets/app.js",
-  "assets/images/NittiGrotesk-SemiLight.svg": "http://localhost:8080/assets/images/NittiGrotesk-SemiLight.ca484136.svg",
-  "assets/images/NittiGrotesk-Medium.svg": "http://localhost:8080/assets/images/NittiGrotesk-Medium.e8132f66.svg",
-  "assets/images/NittiGrotesk.svg": "http://localhost:8080/assets/images/NittiGrotesk.50850920.svg",
-  "assets/images/NittiGrotesk-Bold.svg": "http://localhost:8080/assets/images/NittiGrotesk-Bold.44e1ac11.svg",
-  "assets/images/DBSaiKrokX-Bold.svg": "http://localhost:8080/assets/images/DBSaiKrokX-Bold.e1dcf90e.svg",
-  "assets/images/DBSaiKrokX-Regular.svg": "http://localhost:8080/assets/images/DBSaiKrokX-Regular.2724d26c.svg",
+  "assets/images/NittiGrotesk-SemiLight.svg": "http://localhost:8080/assets/images/NittiGrotesk-SemiLight.8427b864.svg",
+  "assets/images/NittiGrotesk-Medium.svg": "http://localhost:8080/assets/images/NittiGrotesk-Medium.83728d07.svg",
+  "assets/images/NittiGrotesk.svg": "http://localhost:8080/assets/images/NittiGrotesk.0616946b.svg",
+  "assets/images/NittiGrotesk-Bold.svg": "http://localhost:8080/assets/images/NittiGrotesk-Bold.8759ae94.svg",
+  "assets/images/DBSaiKrokX-Bold.svg": "http://localhost:8080/assets/images/DBSaiKrokX-Bold.6749336c.svg",
+  "assets/images/DBSaiKrokX-Regular.svg": "http://localhost:8080/assets/images/DBSaiKrokX-Regular.d9598114.svg",
   "assets/fonts/DBSaiKrokX-Bold.eot": "http://localhost:8080/assets/fonts/DBSaiKrokX-Bold.ccf51a6c.eot",
   "assets/fonts/DBSaiKrokX-Regular.eot": "http://localhost:8080/assets/fonts/DBSaiKrokX-Regular.3cf3efc1.eot",
   "assets/fonts/NittiGrotesk-SemiLight.eot": "http://localhost:8080/assets/fonts/NittiGrotesk-SemiLight.ff4349c0.eot",
@@ -31,8 +31,8 @@
   "assets/fonts/NittiGrotesk-Medium.woff2": "http://localhost:8080/assets/fonts/NittiGrotesk-Medium.ff3a124e.woff2",
   "assets/fonts/NittiGrotesk-Bold.woff2": "http://localhost:8080/assets/fonts/NittiGrotesk-Bold.f4628d0a.woff2",
   "assets/fonts/NittiGrotesk.woff2": "http://localhost:8080/assets/fonts/NittiGrotesk.f339172b.woff2",
-  "assets/images/carmana-logo-secondary.svg": "http://localhost:8080/assets/images/carmana-logo-secondary.f69f1a6b.svg",
-  "assets/images/wish-list.svg": "http://localhost:8080/assets/images/wish-list.8ac5c730.svg",
-  "assets/images/wish-list2.svg": "http://localhost:8080/assets/images/wish-list2.fb36106a.svg",
-  "assets/images/keyboard-arrow-down.svg": "http://localhost:8080/assets/images/keyboard-arrow-down.6e113537.svg"
+  "assets/images/carmana-logo-secondary.svg": "http://localhost:8080/assets/images/carmana-logo-secondary.7a3c6993.svg",
+  "assets/images/wish-list.svg": "http://localhost:8080/assets/images/wish-list.d8afe172.svg",
+  "assets/images/wish-list2.svg": "http://localhost:8080/assets/images/wish-list2.e9aa2ad7.svg",
+  "assets/images/keyboard-arrow-down.svg": "http://localhost:8080/assets/images/keyboard-arrow-down.ef46e9ff.svg"
 }
